@@ -1,0 +1,125 @@
+# ============================================================
+# Matrix-Compliance Configuration
+# ============================================================
+
+paths:
+  documents: documents/PDFs
+  checklist: documents/Compliance checklist.txt
+  data_dir: data
+  index_dir: data/index
+  runs_dir: data/runs
+
+# ------------------------------------------------------------
+# Model & API Settings
+# ------------------------------------------------------------
+models:
+  completion: gpt-4o-mini           # LLM for reasoning / verdict generation
+  embedding: text-embedding-3-small # OpenAI embedding model for retrieval
+  temperature: 0.0                  # deterministic outputs
+  max_tokens_per_call: 1500         # prompt + completion total
+  max_completion_tokens: 180        # output budget
+
+# ------------------------------------------------------------
+# Retrieval / Ranking Parameters
+# ------------------------------------------------------------
+retrieval:
+  n_bm25: 30       # top-N from BM25 lexical search
+  n_emb: 30        # top-N from embedding search
+  k_rerank: 6      # top-K kept after reranking
+  use_cross_encoder: true
+  cross_encoder: cross-encoder/ms-marco-MiniLM-L-6-v2
+
+# ------------------------------------------------------------
+# Ingestion (Docling or fallback)
+# ------------------------------------------------------------
+ingest:
+  engine: hybrid          # NEW: hybrid | docling | pymupdf
+  include_tables: true
+  include_captions: true
+  enable_ocr: false
+  max_chars_per_chunk: 1000
+  overlap_ratio: 0.15
+  # picture_description: off      # off | vlm | api
+  # ocr_engine: auto              # auto | tesseract | easyocr
+  # ocr_langs: ["eng"]            # add more like "deu", "fra" if needed
+# ------------------------------------------------------------
+# Hardware / Performance
+# ------------------------------------------------------------
+hardware:
+  use_gpu: false         # true if CUDA available for reranking
+  faiss_gpu: false       # true only for very large indices
+  batch_size_rerank: 16  # for cross-encoder if enabled
+
+# ------------------------------------------------------------
+# Features / Output
+# ------------------------------------------------------------
+features:
+  save_snippets: true     # store compressed evidence per item
+  save_candidates: true   # keep retrieval candidates
+  make_pdf_report: true   # convert markdown to PDF
+  log_tokens: true        # log token usage per LLM call
+
+# ------------------------------------------------------------
+# Logging & Misc
+# ------------------------------------------------------------
+logging:
+  level: INFO
+  file_log: true
+  color: true
+  timestamp: true
+
+# ------------------------------------------------------------
+# vis
+# ------------------------------------------------------------
+viz:
+  enable: true
+  threshold_low_char: 100
+  tiny_chunk_char: 400
+  overlap_tolerance: 0.05
+  show_tables: true
+  show_captions: true
+  
+# ============================================================
+# End of config.yaml
+# ============================================================
+# index:
+#   bm25: true
+#   embedding_backend: sbert      # "sbert" | "openai"
+#   embedding_model: sentence-transformers/all-MiniLM-L6-v2
+#   faiss_metric: ip              # "ip" or "l2"
+#   normalize: true               # normalize vectors if ip
+#   save_vectors: true
+#   batch_size: 64                # embedding batch size
+# paths:
+#   runs_dir: data/runs
+#   index_dir: data/index
+# index:
+#   embedding_backend: openai
+#   embedding_model: text-embedding-3-small   # or text-embedding-3-large
+#   bm25: true
+#   faiss_metric: ip
+#   normalize: true
+#   save_vectors: true
+#   batch_size: 256
+
+index:
+  bm25: true
+
+  # one of: auto | sbert | openai
+  embedding_backend: auto
+
+  # per-backend defaults (used when backend==auto or when --model not passed)
+  defaults:
+    sbert_model: sentence-transformers/all-MiniLM-L6-v2
+    openai_model: text-embedding-3-small
+
+  # advanced knobs
+  faiss_metric: ip        # ip or l2
+  normalize: true         # normalize vectors when using ip
+  save_vectors: true
+  batch_size: 64
+paths:
+  runs_dir: data/runs
+  index_dir: data/index
+  documents: documents/PDFs
+  data_dir: data

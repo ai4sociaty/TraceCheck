@@ -1,0 +1,117 @@
+{
+  "objective": "To verify if the provided medical device technical documentation contains information pertaining to key regulatory and quality aspects. For each point, the goal is to identify relevant passage(s) (citation/quotation) from the document and assess the level of information coverage (e.g., Fully Covered, Partially Covered, Not Covered, Not Clear).",
+  "items": [
+    {
+      "id": "C1",
+      "title": "Device Identification & Manufacturer",
+      "questions": [
+        "Is the device clearly identified by its official name(s) (e.g., trade name, model numbers)?",
+        "Is the legal manufacturer and their address clearly stated?"
+      ]
+    },
+    {
+      "id": "C2",
+      "title": "Intended Use / Indications for Use",
+      "questions": [
+        "Is the specific medical purpose and the clinical conditions for which the device is intended clearly defined?",
+        "Is the target patient population (e.g., adult, pediatric, specific conditions) described?"
+      ]
+    },
+    {
+      "id": "C3",
+      "title": "Contraindications",
+      "questions": [
+        "Are there explicit statements about situations, conditions, or patient groups for whom the device must NOT be used?"
+      ]
+    },
+    {
+      "id": "C4",
+      "title": "Device Description & Principles of Operation",
+      "questions": [
+        "Does the document provide a comprehensive description of the device, its main components/materials, and its accessories?",
+        "Is the scientific or technical principle by which the device achieves its intended purpose explained?"
+      ]
+    },
+    {
+      "id": "C5",
+      "title": "Potential Risks & Adverse Events",
+      "questions": [
+        "Is there a list or discussion of known or foreseeable risks, side effects, or potential adverse events associated with the device's use?"
+      ]
+    },
+    {
+      "id": "C6",
+      "title": "Risk Management Summary",
+      "questions": [
+        "Is there evidence or a statement that a systematic risk management process (e.g., aligned with ISO 14971) was applied throughout the device lifecycle?"
+      ]
+    },
+    {
+      "id": "C7",
+      "title": "Preclinical Evaluation Summary (Non-Clinical Testing)",
+      "questions": [
+        "Does the documentation summarize key non-clinical tests performed to ensure safety and performance (e.g., biocompatibility, electrical safety, mechanical integrity, software verification, sterilization validation, shelf-life)?",
+        "Are references to applicable standards (e.g., ISO, IEC, ASTM) for these tests mentioned?"
+      ]
+    },
+    {
+      "id": "C8",
+      "title": "Animal Studies (if applicable)",
+      "questions": [
+        "If animal studies were necessary and performed, is there a summary of these studies, their objectives, and key findings related to safety or performance?"
+      ]
+    },
+    {
+      "id": "C9",
+      "title": "Clinical Evaluation & Performance Data",
+      "questions": [
+        "Is there a summary of the clinical evidence supporting the device's safety and performance for its intended use?",
+        "Are key clinical outcome measures, study designs, patient numbers, and results (both safety and effectiveness) presented or summarized?"
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "MRI Safety Information (if applicable to the device type)",
+      "questions": [
+        "If the device could be exposed to an MRI environment, are specific conditions for safe MRI use (MR Conditional) or contraindications (MR Unsafe) clearly stated?"
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "Human Factors / Usability Engineering",
+      "questions": [
+        "Is there mention or evidence of a usability engineering process being applied to optimize the device's user interface and minimize use-related hazards?"
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "Information Supplied to the User (Labeling & IFU Content)",
+      "questions": [
+        "Does the documentation describe or reflect the core content that would be provided to the end-user, such as essential elements of labeling and Instructions For Use?",
+        "Are key warnings, precautions, and instructions for proper use, storage, and maintenance adequately covered or described?"
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "Sterilization & Packaging (for sterile devices)",
+      "questions": [
+        "If the device is supplied sterile, is the method of sterilization described or referenced?",
+        "Is information on the sterile barrier system and maintenance of sterility provided or summarized?"
+      ]
+    },
+    {
+      "id": "C14",
+      "title": "Software Lifecycle Processes (for devices with software/firmware)",
+      "questions": [
+        "If the device incorporates software or is controlled by software, is there evidence of systematic software development, verification, and validation processes (e.g., aligned with IEC 62304)?"
+      ]
+    },
+    {
+      "id": "C15",
+      "title": "Post-Market Surveillance (PMS) & Vigilance Concepts",
+      "questions": [
+        "Is there an indication of the manufacturer's framework or commitment to post-market surveillance and procedures for handling and reporting adverse events (vigilance)?"
+      ]
+    }
+  ]
+}
