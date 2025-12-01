@@ -1,4 +1,4 @@
-# Matrix Compliance — Automated Document Compliance Verification
+# TraceCheck — Automated Document Compliance Verification
 
 A production-ready reference implementation that assists RA/QA professionals in verifying whether a **medical device technical document** covers a **compliance checklist**. It ingests large PDFs, builds **hybrid retrieval** (BM25 + embeddings), and runs **single-stage per-chunk LLM judging** to classify each checklist question as **Covered / Partially Covered / Not Covered**, with supporting evidence and a clean report — all under strict **per-call token limits**.
 
@@ -33,7 +33,7 @@ A production-ready reference implementation that assists RA/QA professionals in 
 ## Project Structure
 
 ```
-matrix-compliance/
+TraceCheck/
 ├─ README.md                        # ← you are here
 ├─ requirements.txt
 ├─ config.yaml                      # central configuration (models, tokens, flags, paths)
@@ -289,4 +289,4 @@ Open via the CLI viz commands or the Streamlit link buttons.
 
 ## 📄 License
 
-To be done later ..... (MIT?)
+AGPL 3.0

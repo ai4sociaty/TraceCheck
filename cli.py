@@ -1,7 +1,7 @@
 # cli.py
 # -*- coding: utf-8 -*-
 """
-Command-line interface for the Matrix Compliance pipeline.
+Command-line interface for the TraceCheck Compliance pipeline.
 
 """
 
@@ -41,8 +41,8 @@ from app.utils import load_yaml, make_run_dir, snapshot_config, resolve_embeddin
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="matrix-compliance",
-        description="Matrix Requirements – Automated Document Compliance Verification"
+        prog="TraceCheck",
+        description="TraceCheck Requirements – Automated Document Compliance Verification"
     )
     sub = parser.add_subparsers(dest="cmd", required=True)
 

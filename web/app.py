@@ -100,8 +100,8 @@ def link_button(label: str, path: str):
 
 # ---------- UI ----------
 
-st.set_page_config(page_title="Matrix Compliance – CLI Runner", layout="wide")
-st.title("🧩 Matrix Compliance — CLI Orchestrator")
+st.set_page_config(page_title="TraceCheck Compliance – CLI Runner", layout="wide")
+st.title("🧩 TraceCheck Compliance — CLI Orchestrator")
 
 # Left: upload & run, Right: settings
 left, right = st.columns([2, 1])

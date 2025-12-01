@@ -271,7 +271,7 @@ class ReportGenerator:
     def _render_run_md(self, per_doc_paths: List[str]) -> str:
         now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
         lines = []
-        lines.append(_md_h1("Matrix Compliance — Run Summary"))
+        lines.append(_md_h1("TraceCheck Compliance — Run Summary"))
         lines.append(_md_kv("Run directory", self.run_dir))
         lines.append(_md_kv("Generated at", now))
         lines.append(_md_kv("Documents", ", ".join(self.doc_ids) if self.doc_ids else "—"))
